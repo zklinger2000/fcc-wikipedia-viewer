@@ -3,10 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>Zack Klinger, Web Developer, Portland, OR</title>
+  <!-- load jQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
   <!-- load AngularJS -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-  <!-- main app file -->
-  <script src="app.js"></script>
+  <!-- link to Bootstrap js -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- link to Bootstrap stylesheet -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <!-- link to Font Awesome stylesheet -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- link to main stylesheet -->
@@ -15,11 +19,13 @@
   <link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
   <!-- Vollkorn font -->
   <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+  <!-- main app file -->
+  <script src="app.js" type="application/javascript"></script>
 </head>
 <body ng-app="wikiApp">
-<div class="content-wrapper" ng-controller="mainController">
+<div class="content-wrapper" ng-controller="MainController as vm">
   <div class="flex-wrapper">
-    {{ name }}
+    <div class="btn btn-primary" ng-click="vm.searchWiki('Spain')">search</div>
   </div>
 </div>
 </body>
