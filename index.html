@@ -24,8 +24,39 @@
 </head>
 <body ng-app="wikiApp">
 <div class="content-wrapper" ng-controller="MainController as vm">
-  <div class="flex-wrapper">
-    <div class="btn btn-primary" ng-click="vm.searchWiki('Spain')">search</div>
+  <div class="container">
+    <div class="row header">
+      <div class="col-xs-12">
+        <h1 class="page-header">wikiSearch</h1>
+      </div>
+    </div>
+    <div class="row search-row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="input-group">
+          <span class="input-group-addon">wikiSearch</span>
+          <input type="text" class="form-control" aria-label="search Wikipedia" ng-model="vm.search">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" ng-click="vm.searchWiki(vm.search)"><i class="fa fa-search"></i></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row header">
+      <div class="col-xs-12">
+<!--        <h1 class="page-header" ng-show="vm.wikiData">Wikipedia page for "{{ vm.wikiData.search }}"</h1>-->
+        <div class="results-list">
+          <div class="results-page-title">
+            <h2>Wikipedia page for "{{ vm.wikiData[0] }}"</h2>
+          </div>
+          <div class="results-links">
+            <h3>results:</h3>
+            <div class="result-link" ng-repeat="link in vm.wikiData[1]">
+              {{ link }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 </body>

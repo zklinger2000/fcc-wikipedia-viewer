@@ -7,7 +7,9 @@ angular.module('wikiApp', [])
   
   var wikiService = {
     get: function(search) {
-      return $http.jsonp('http://en.wikipedia.org/w/api.php?action=query&titles=' + search + '&prop=revisions&rvlimit=max&rvprop=content&list=backlinks&bltitle=' + search + '&bllimit=55&format=json&callback=JSON_CALLBACK');
+      return $http.jsonp('http://en.wikipedia.org/w/api.php?action=opensearch&search=' +
+                         search +
+                         '&limit=10&namespace=0&format=json&callback=JSON_CALLBACK');
     }
   };
 
@@ -19,9 +21,11 @@ angular.module('wikiApp', [])
   vm.searchWiki = searchWiki;
   
   function searchWiki(search) {
+    vm.wikiData = {};
+    
     wikiService.get(search).then(function(data) {
       console.log(data);
-      $scope.wikiData = data.data.query;
+      vm.wikiData = data.data;
     });
   }
 
