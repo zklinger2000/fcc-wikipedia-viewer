@@ -1,7 +1,31 @@
 * {
   box-sizing: border-box;
 }
-
+body {
+  background-color: #a13646;
+}
+.page-header {
+  font-size: 6em;
+  color: #e8a1ac;
+}
+.results-page-title {
+/*  font-size: 6em;*/
+  color: #e8a1ac;
+}
+.panel-default:hover >.panel-heading {
+  background-color: #59000e;
+  color: #faf6f9;
+}
+.panel-body {
+  background-color: #fae6e9;
+}
+.panel-default>.panel-heading {
+  background-color: #79202e;
+  color: #fae6e9;
+}
+.panel-default:hover .panel-body {
+  background-color: #faf6f9;
+}
 .result-link a {
   color: #333;
 }

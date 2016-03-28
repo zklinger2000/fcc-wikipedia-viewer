@@ -35,10 +35,10 @@
     <div class="row search-row">
       <div class="col-xs-12 col-sm-6">
         <div class="input-group">
-          <span class="input-group-addon">wikiSearch</span>
+          <span class="input-group-addon">search</span>
           <input type="text" class="form-control" aria-label="search Wikipedia" ng-model="vm.search">
           <span class="input-group-btn">
-            <button class="btn btn-primary" type="button" ng-click="vm.searchWiki(vm.search)"><i class="fa fa-search"></i></button>
+            <button class="btn btn-search" type="button" ng-click="vm.searchWiki(vm.search)"><i class="fa fa-search"></i></button>
           </span>
         </div>
       </div>
@@ -51,7 +51,6 @@
             <h2>Wikipedia search results for "{{ vm.wikiData.searchTerm }}"</h2>
           </div>
           <div class="results-links">
-            <h3>results:</h3>
             <div class="result-link" ng-repeat="result in vm.wikiData.results">
               <a href="{{ result[2] }}" target="_blank">
                 <div class="panel panel-default">
