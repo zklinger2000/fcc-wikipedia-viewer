@@ -33,6 +33,8 @@ angular.module('wikiApp', [])
       console.log(data);
       vm.wikiData.results = _.zip(data.data[1], data.data[2], data.data[3]);
       vm.wikiData.searchTerm = data.data[0].toString();
+      // clear search input
+      vm.search = '';
     });
   }
 

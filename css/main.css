@@ -1,3 +1,10 @@
 * {
   box-sizing: border-box;
 }
+
+.result-link a {
+  color: #333;
+}
+.result-link a:hover {
+  text-decoration: none;
+}
