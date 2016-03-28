@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Zack Klinger, Web Developer, Portland, OR</title>
+  <!-- load AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <!-- main app file -->
+  <script src="app.js"></script>
+  <!-- link to Font Awesome stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- link to main stylesheet -->
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <!-- Unica One font -->
+  <link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
+  <!-- Vollkorn font -->
+  <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+</head>
+<body ng-app="wikiApp">
+<div class="content-wrapper" ng-controller="mainController">
+  <div class="flex-wrapper">
+    {{ name }}
+  </div>
+</div>
+</body>
+</html>
