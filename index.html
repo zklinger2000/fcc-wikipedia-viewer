@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Zack Klinger, Web Developer, Portland, OR</title>
+  <!-- load lodash -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.js"></script>
   <!-- load jQuery -->
   <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
   <!-- load AngularJS -->
@@ -46,12 +48,14 @@
 <!--        <h1 class="page-header" ng-show="vm.wikiData">Wikipedia page for "{{ vm.wikiData.search }}"</h1>-->
         <div class="results-list">
           <div class="results-page-title">
-            <h2>Wikipedia page for "{{ vm.wikiData[0] }}"</h2>
+            <h2>Wikipedia page for "{{ vm.wikiData.searchTerm }}"</h2>
           </div>
           <div class="results-links">
             <h3>results:</h3>
-            <div class="result-link" ng-repeat="link in vm.wikiData[1]">
-              {{ link }}
+            <div class="result-link" ng-repeat="result in vm.wikiData.results">
+              <h2>{{ result[0] }}</h2>
+              <p>{{ result[1] }}</p>
+              <a href="{{ result[2] }}" target="_blank">{{ result[2] }}</a>
             </div>
           </div>
         </div>

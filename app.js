@@ -1,7 +1,13 @@
 // app.js
 angular.module('wikiApp', [])
 
-
+// allow DI for use in controllers, unit tests
+.constant('_', window._)
+// use in views, ng-repeat="x in _.range(3)"
+.run(function ($rootScope) {
+  $rootScope._ = window._;
+})
+// 
 .factory('wikiService', function($http) {
 
   
@@ -25,7 +31,8 @@ angular.module('wikiApp', [])
     
     wikiService.get(search).then(function(data) {
       console.log(data);
-      vm.wikiData = data.data;
+      vm.wikiData.results = _.zip(data.data[1], data.data[2], data.data[3]);
+      vm.wikiData.searchTerm = data.data[0].toString();
     });
   }
 
