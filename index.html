@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- link to main stylesheet -->
   <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <!-- Unica One font -->
-  <link href='https://fonts.googleapis.com/css?family=Unica+One' rel='stylesheet' type='text/css'>
-  <!-- Vollkorn font -->
-  <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
+  <!-- PT Sans font -->
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+  <!-- Cabin font -->
+  <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
   <!-- main app file -->
   <script src="app.js" type="application/javascript"></script>
 </head>
@@ -47,7 +47,7 @@
       <div class="col-xs-12">
 <!--        <h1 class="page-header" ng-show="vm.wikiData">Wikipedia page for "{{ vm.wikiData.search }}"</h1>-->
         <div class="results-list">
-          <div class="results-page-title">
+          <div ng-show="vm.wikiData.results.length && vm.wikiData.searchTerm" class="results-page-title">
             <h2>Wikipedia search results for "{{ vm.wikiData.searchTerm }}"</h2>
           </div>
           <div class="results-links">
@@ -63,7 +63,9 @@
                 </div>
               </a>
             </div>
-            <div>This sucks, no results...</div>
+          </div>
+          <div ng-show="!vm.wikiData.results.length && vm.wikiData.searchTerm" class="results-page-title">
+            <h2>Sorry, no results for "{{ vm.wikiData.searchTerm }}"...</h2>
           </div>
         </div>
       </div>
