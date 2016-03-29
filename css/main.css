@@ -5,6 +5,26 @@ body {
   background-color: #a13646;
   font-family: 'Cabin', sans-serif;
 }
+.ui-widget {
+  background-color: #eee;
+  list-style: none;
+  display: inline-block;
+}
+.ui-helper-hidden-accessible {
+  display: none;
+}
+.ui-autocomplete {
+  width: 25px;
+}
+.ui-autocomplete:active {
+  background-color: yellow;
+}
+.ui-autocomplete:focus {
+  background-color: yellow;
+}
+.ui-autocomplete:hover {
+  background-color: yellow;
+}
 .page-header {
   font-family: 'PT Sans', sans-serif;
   font-size: 6em;

@@ -7,6 +7,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.6.1/lodash.js"></script>
   <!-- load jQuery -->
   <script src="https://code.jquery.com/jquery-2.2.2.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <!-- load AngularJS -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <!-- link to Bootstrap js -->
@@ -23,6 +24,37 @@
   <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
   <!-- main app file -->
   <script src="app.js" type="application/javascript"></script>
+  <script>
+  $(document).ready(function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $("#search").autocomplete({
+      source: availableTags
+    });
+  });
+  </script>  
 </head>
 <body ng-app="wikiApp">
 <div class="content-wrapper" ng-controller="MainController as vm">
@@ -36,16 +68,18 @@
       <div class="col-xs-12 col-sm-6">
         <div class="input-group">
           <span class="input-group-addon">search</span>
-          <input type="text" class="form-control" aria-label="search Wikipedia" ng-model="vm.search">
+          <input id="search" type="text" class="form-control" aria-label="search Wikipedia" ng-model="vm.search">
           <span class="input-group-btn">
             <button class="btn btn-search" type="button" ng-click="vm.searchWiki(vm.search)"><i class="fa fa-search"></i></button>
           </span>
         </div>
       </div>
+      <div class="col-xs-12 col-sm-6">
+        <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><button class="btn btn-primary pull-right" type="button" ng-click="vm.searchWiki(vm.search)">Random</button></a>
+      </div>
     </div>
     <div class="row header">
       <div class="col-xs-12">
-<!--        <h1 class="page-header" ng-show="vm.wikiData">Wikipedia page for "{{ vm.wikiData.search }}"</h1>-->
         <div class="results-list">
           <div ng-show="vm.wikiData.results.length && vm.wikiData.searchTerm" class="results-page-title">
             <h2>Wikipedia search results for "{{ vm.wikiData.searchTerm }}"</h2>
